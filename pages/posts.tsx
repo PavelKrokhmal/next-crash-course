@@ -6,16 +6,16 @@ import {MyPost} from "../intefaces/post";
 import {NextPageContext} from "next";
 
 interface PostsPageProps {
-    posts: MyPost[]
+    posts: MyPost[] | null
 }
 
-export default function Posts({posts: serverPosts}: PostsPageProps) {
+export default function Posts({posts: serverPosts = null}: PostsPageProps) {
 
     const [posts, setPosts] = useState(serverPosts)
 
     useEffect(() => {
         async function load() {
-            const response = await fetch('http://localhost:4200/posts')
+            const response = await fetch(process.env.API_URL + '/posts')
             const data = await response.json()
             setPosts(data)
         }
@@ -55,7 +55,8 @@ Posts.getInitialProps = async ({req}: NextPageContext) => {
             posts: null
         }
     }
-    const response = await fetch('http://localhost:4200/posts')
+
+    const response = await fetch(`${process.env.API_URL}/posts`)
     const posts: MyPost[] = await response.json()
     return {
         posts
