@@ -2,9 +2,14 @@ import {MainLayout} from "../../components/MainLayout";
 import Link from 'next/link'
 import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
-import NextNProgress from "nextjs-progressbar";
+import {NextPageContext} from "next";
+import {MyPost} from "../../intefaces/post";
 
-export default function Post({post: serverPost = null}) {
+interface PostPageProps {
+    post: MyPost
+}
+
+export default function Post({post: serverPost = null}: PostPageProps) {
 
     const [post, setPost] = useState(serverPost)
     const router = useRouter()
@@ -56,10 +61,16 @@ export default function Post({post: serverPost = null}) {
 //     }
 // }
 
-export async function getServerSideProps({query: {id}, req}) {
+interface PostNextPageContext extends NextPageContext {
+    query: {
+        id: string
+    }
+}
+
+export async function getServerSideProps({query: {id}}: PostNextPageContext) {
 
     const response = await fetch('http://localhost:4200/posts/' + id)
-    const post = await response.json()
+    const post: MyPost = await response.json()
 
     return {
         props: {post}

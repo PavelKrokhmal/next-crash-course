@@ -1,7 +1,11 @@
 import Router from 'next/router'
 import {MainLayout} from "../../components/MainLayout";
 
-export default function Index({title}) {
+interface AboutProps {
+    title: string
+}
+
+export default function Index({title}: AboutProps) {
 
     return (
         <MainLayout title={"About page"}>
