@@ -3,5 +3,8 @@
     {"id": 1, "title": "JavaScript post", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nisl urna, accumsan sit amet mauris ut, interdum imperdiet quam. Cras dolor nulla, consequat vitae posuere sed, facilisis ut nunc. Ut consectetur interdum lectus, ultrices volutpat orci finibus in. Nunc at leo at dolor auctor euismod a non turpis. Ut tempor dui suscipit risus egestas gravida. Vivamus sed nulla ligula. Mauris eget risus iaculis, mattis lectus ut, dapibus ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus."},
     {"id": 2, "title": "React post", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nisl urna, accumsan sit amet mauris ut, interdum imperdiet quam. Cras dolor nulla, consequat vitae posuere sed, facilisis ut nunc. Ut consectetur interdum lectus, ultrices volutpat orci finibus in. Nunc at leo at dolor auctor euismod a non turpis. Ut tempor dui suscipit risus egestas gravida. Vivamus sed nulla ligula. Mauris eget risus iaculis, mattis lectus ut, dapibus ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus."},
     {"id": 3, "title": "Vue post", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nisl urna, accumsan sit amet mauris ut, interdum imperdiet quam. Cras dolor nulla, consequat vitae posuere sed, facilisis ut nunc. Ut consectetur interdum lectus, ultrices volutpat orci finibus in. Nunc at leo at dolor auctor euismod a non turpis. Ut tempor dui suscipit risus egestas gravida. Vivamus sed nulla ligula. Mauris eget risus iaculis, mattis lectus ut, dapibus ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus."}
-  ]
+  ],
+  "about": {
+    "title": "Page about us"
+  }
 }

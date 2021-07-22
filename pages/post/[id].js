@@ -2,8 +2,9 @@ import {MainLayout} from "../../components/MainLayout";
 import Link from 'next/link'
 import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
+import NextNProgress from "nextjs-progressbar";
 
-export default function Post({post: serverPost}) {
+export default function Post({post: serverPost = null}) {
 
     const [post, setPost] = useState(serverPost)
     const router = useRouter()
@@ -41,16 +42,26 @@ export default function Post({post: serverPost}) {
     )
 }
 
-Post.getInitialProps = async ({query: {id}, req}) => {
+// Post.getInitialProps = async ({query: {id}, req}) => {
+//
+//     if (!req) {
+//         return {post: null}
+//     }
+//
+//     const response = await fetch('http://localhost:4200/posts/' + id)
+//     const post = await response.json()
+//
+//     return {
+//         post
+//     }
+// }
 
-    if (!req) {
-        return {post: null}
-    }
+export async function getServerSideProps({query: {id}, req}) {
 
     const response = await fetch('http://localhost:4200/posts/' + id)
     const post = await response.json()
 
     return {
-        post
+        props: {post}
     }
 }
